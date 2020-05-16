@@ -48,6 +48,7 @@ index 0728518..86b16bc 100755
 -    });
 +   let y = 0;
 +    const interval = setInterval(() => {
+//For streaming Continuosly 
 +      DataStreamer.getData((serverResponds: ServerRespond[]) => {
 +       this.setState({
 +          data: serverResponds,
@@ -56,6 +57,7 @@ index 0728518..86b16bc 100755
 +      });
 +      y++;
 +    if (y > 1000) {
+//Every One Second Refresh rate
 +        clearInterval(interval);
 +     }
 +   }, 100);
